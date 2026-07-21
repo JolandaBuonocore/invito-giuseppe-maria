@@ -159,7 +159,7 @@ body.transizione-in-corso {
 }
 
 #cerimonia .contenuto {
-  transform: translateY(-18vh);
+  transform: translateY(15px);
 }
 
 #ricevimento .contenuto {

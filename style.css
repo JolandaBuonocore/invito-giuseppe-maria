@@ -159,7 +159,7 @@ body.transizione-in-corso {
 }
 
 #cerimonia .contenuto {
-  transform: translateY(40px);
+  transform: translateY(-40px);
 }
 
 #ricevimento .contenuto {
@@ -896,7 +896,7 @@ button[type="submit"]:disabled {
 
   .pagina {
     padding:
-      80px
+      calc(110px + env(safe-area-inset-top))
       20px
       90px;
 
@@ -928,19 +928,19 @@ button[type="submit"]:disabled {
   }
 
   #home .contenuto {
-    transform: translateY(-23vh);
+    transform: translateY(-20vh);
   }
 
   #invito .contenuto {
-    transform: translateY(0);
+    transform: translateY(2vh);
   }
 
   #cerimonia .contenuto {
-    transform: translateY(-14vh);
+    transform: translateY(-2vh);
   }
 
   #ricevimento .contenuto {
-    transform: translateY(-13vh);
+    transform: translateY(-6vh);
 
     padding:
       22px
@@ -948,7 +948,7 @@ button[type="submit"]:disabled {
   }
 
   #conferma .contenuto {
-    transform: translateY(-7vh);
+    transform: translateY(4vh);
   }
 
   #lista-nozze .contenuto {
@@ -957,7 +957,7 @@ button[type="submit"]:disabled {
     margin-left: 0;
     margin-right: auto;
 
-    transform: translateY(-13vh);
+    transform: translateY(-7vh);
 
     text-align: left;
   }
@@ -984,7 +984,6 @@ button[type="submit"]:disabled {
 
   .anno-data {
     font-size: 19px;
-
     letter-spacing: 13px;
   }
 
@@ -1013,7 +1012,7 @@ button[type="submit"]:disabled {
   }
 
   .menu-button {
-    top: 18px;
+    top: calc(18px + env(safe-area-inset-top));
     right: 18px;
 
     width: 52px;
@@ -1048,7 +1047,6 @@ button[type="submit"]:disabled {
 
   .opzione-presenza span {
     min-height: 55px;
-
     font-size: 16px;
   }
 
@@ -1058,16 +1056,11 @@ button[type="submit"]:disabled {
 
   .iban-numero {
     font-size: 17px;
-
     letter-spacing: 0.5px;
   }
 
   .iban-intestatario {
     font-size: 20px;
-  }
-
-  .anta-home {
-    background-size: 200% 100%;
   }
 }
 
@@ -1080,7 +1073,7 @@ button[type="submit"]:disabled {
 
   .pagina {
     padding:
-      70px
+      calc(100px + env(safe-area-inset-top))
       16px
       85px;
   }
@@ -1102,14 +1095,29 @@ button[type="submit"]:disabled {
   }
 
   #home .contenuto {
-    transform: translateY(-20vh);
+    transform: translateY(-17vh);
+  }
+
+  #invito .contenuto {
+    transform: translateY(2vh);
+  }
+
+  #cerimonia .contenuto {
+    transform: translateY(0);
+  }
+
+  #ricevimento .contenuto {
+    transform: translateY(-3vh);
+  }
+
+  #conferma .contenuto {
+    transform: translateY(5vh);
   }
 
   #lista-nozze .contenuto {
-    transform: translateY(-10vh);
+    transform: translateY(-4vh);
   }
 }
-
 
 /* =========================
    ACCESSIBILITÀ

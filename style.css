@@ -1,0 +1,1131 @@
+/* =========================
+   GENERALE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: #6f4f2d;
+  background-color: #f5f2eb;
+
+  overflow-x: hidden;
+}
+
+body.menu-aperto,
+body.transizione-in-corso {
+  overflow: hidden;
+}
+
+
+/* =========================
+   SCHERMATE
+========================= */
+
+.pagina {
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding:
+    80px
+    30px
+    100px;
+
+  text-align: center;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   SFONDI
+========================= */
+
+#home {
+  background-image: url("immagini/home.png");
+  background-position: center bottom;
+}
+
+#invito {
+  background-image: url("immagini/invito.png");
+  background-position: center center;
+}
+
+#cerimonia {
+  background-image: url("immagini/cerimonia.png");
+  background-position: center bottom;
+}
+
+#ricevimento {
+  background-image: url("immagini/ricevimento.png");
+  background-position: center bottom;
+}
+
+#conferma {
+  background-image: url("immagini/conferma.png");
+  background-position: center bottom;
+}
+
+#lista-nozze {
+  background-image: url("immagini/regalo.png");
+  background-position: center center;
+}
+
+
+/* =========================
+   VELO SOPRA LE IMMAGINI
+========================= */
+
+.pagina::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   CONTENUTO
+========================= */
+
+.contenuto {
+  width: 100%;
+  max-width: 700px;
+
+  position: relative;
+  z-index: 2;
+
+  text-shadow:
+    0 2px 4px rgba(255, 255, 255, 0.95),
+    0 0 14px rgba(255, 255, 255, 0.78);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.9s ease;
+}
+
+.pagina.visibile .contenuto {
+  opacity: 1;
+}
+
+
+/* =========================
+   POSIZIONE TESTI
+========================= */
+
+#home .contenuto {
+  transform: translateY(-32vh);
+}
+
+#invito .contenuto {
+  transform: translateY(0);
+}
+
+#cerimonia .contenuto {
+  transform: translateY(-18vh);
+}
+
+#ricevimento .contenuto {
+  transform: translateY(-18vh);
+
+  padding:
+    26px
+    30px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.42);
+
+  box-shadow:
+    0 8px 30px rgba(75, 55, 30, 0.08);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+#conferma .contenuto {
+  transform: translateY(-11vh);
+}
+
+#lista-nozze .contenuto {
+  max-width: 620px;
+
+  margin-left: 7vw;
+  margin-right: auto;
+
+  transform: translateY(-17vh);
+
+  text-align: left;
+}
+
+#lista-nozze .testo-regalo,
+#lista-nozze .iban,
+#lista-nozze .torna-su {
+  text-align: left;
+}
+
+
+/* =========================
+   NOMI HOME
+========================= */
+
+.nomi {
+  margin: 0;
+
+  font-size: 82px;
+  line-height: 0.9;
+
+  font-weight: normal;
+  font-style: italic;
+
+  letter-spacing: -3px;
+
+  color: #6f4f2d;
+}
+
+.nomi span {
+  display: block;
+
+  margin:
+    20px
+    0;
+
+  font-size: 48px;
+}
+
+
+/* =========================
+   INVITO
+========================= */
+
+.testo-invito {
+  max-width: 600px;
+
+  margin:
+    0
+    auto
+    30px;
+
+  font-size: 24px;
+  line-height: 1.6;
+
+  letter-spacing: 2px;
+}
+
+.data-grande {
+  margin:
+    20px
+    0;
+
+  font-weight: normal;
+}
+
+.numero-data {
+  display: inline-block;
+
+  font-size: 110px;
+  font-style: italic;
+
+  line-height: 1;
+}
+
+.mese-data {
+  display: inline-block;
+
+  margin-left: 10px;
+
+  font-size: 65px;
+  font-style: italic;
+}
+
+.anno-data {
+  display: block;
+
+  margin-top: -10px;
+
+  font-size: 25px;
+
+  letter-spacing: 20px;
+}
+
+.countdown-frase {
+  margin-top: 35px;
+
+  font-size: 23px;
+  font-style: italic;
+
+  letter-spacing: 2px;
+}
+
+#giorni-mancanti {
+  font-size: 30px;
+}
+
+
+/* =========================
+   CERIMONIA E RICEVIMENTO
+========================= */
+
+.testo-sezione {
+  margin:
+    0
+    auto
+    25px;
+
+  max-width: 600px;
+
+  font-size: 23px;
+  line-height: 1.6;
+
+  letter-spacing: 2px;
+}
+
+.titolo-elegante {
+  margin:
+    20px
+    auto;
+
+  max-width: 650px;
+
+  font-size: 60px;
+  line-height: 1.1;
+
+  font-weight: normal;
+  font-style: italic;
+}
+
+.indirizzo {
+  margin-top: 35px;
+
+  font-size: 20px;
+  line-height: 1.6;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   PULSANTE INDICAZIONI
+========================= */
+
+.indicazioni-button {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding:
+    14px
+    28px;
+
+  border:
+    1px solid
+    rgba(111, 79, 45, 0.75);
+
+  border-radius: 30px;
+
+  color: #6f4f2d;
+
+  background:
+    rgba(255, 255, 255, 0.86);
+
+  text-decoration: none;
+
+  font-size: 17px;
+  font-style: italic;
+
+  box-shadow:
+    0 4px 14px rgba(70, 50, 25, 0.1);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.indicazioni-button:hover {
+  background-color: #6f4f2d;
+  color: white;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================
+   FRECCIA
+========================= */
+
+.freccia {
+  position: absolute;
+
+  bottom: 22px;
+  left: 50%;
+
+  z-index: 3;
+
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #5f4226;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid
+    rgba(95, 66, 38, 0.3);
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 16px rgba(70, 50, 25, 0.18);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  animation:
+    frecciaMovimento
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+.freccia span {
+  width: 14px;
+  height: 14px;
+
+  display: block;
+
+  border-right:
+    3px solid
+    #5f4226;
+
+  border-bottom:
+    3px solid
+    #5f4226;
+
+  transform:
+    rotate(45deg)
+    translate(-2px, -2px);
+}
+
+@keyframes frecciaMovimento {
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      translateY(8px);
+  }
+}
+
+
+/* =========================
+   MENU HAMBURGER
+========================= */
+
+.menu-button {
+  position: fixed;
+
+  top: 24px;
+  right: 24px;
+
+  z-index: 1000;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(95, 66, 38, 0.3);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 16px rgba(70, 50, 25, 0.18);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.menu-button span {
+  width: 25px;
+  height: 2px;
+
+  display: block;
+
+  border-radius: 10px;
+
+  background-color: #5f4226;
+}
+
+
+/* =========================
+   MENU OVERLAY
+========================= */
+
+.menu-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.menu-overlay.aperto {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-close {
+  position: absolute;
+
+  top: 30px;
+  right: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8b6a44;
+
+  font-size: 45px;
+
+  cursor: pointer;
+}
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 35px;
+
+  text-align: center;
+}
+
+.menu-nav a {
+  color: #8b6a44;
+
+  text-decoration: none;
+
+  font-size: 32px;
+  font-style: italic;
+
+  transition:
+    transform 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+.menu-nav a:hover {
+  transform: translateY(-2px);
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   FORM RSVP
+========================= */
+
+.titolo-form {
+  margin-bottom: 30px;
+
+  font-size: 32px;
+
+  font-weight: normal;
+  font-style: italic;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================
+   CAMPI FORM
+========================= */
+
+input[type="text"],
+textarea {
+  width: 100%;
+
+  padding:
+    20px
+    25px;
+
+  border:
+    1px solid
+    rgba(111, 79, 45, 0.25);
+
+  border-radius: 35px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  color: #5f4226;
+
+  font-size: 18px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-style: italic;
+
+  outline: none;
+
+  box-shadow:
+    0 4px 16px rgba(70, 50, 25, 0.08);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #6f4f2d;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+}
+
+textarea {
+  min-height: 130px;
+
+  resize: none;
+}
+
+
+/* =========================
+   SCELTA PRESENZA
+========================= */
+
+.scelta-presenza {
+  width: 100%;
+
+  display: flex;
+
+  gap: 15px;
+}
+
+.opzione-presenza {
+  flex: 1;
+
+  position: relative;
+
+  cursor: pointer;
+}
+
+.opzione-presenza input {
+  position: absolute;
+
+  opacity: 0;
+}
+
+.opzione-presenza span {
+  width: 100%;
+  min-height: 65px;
+
+  padding:
+    15px
+    10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border:
+    1px solid
+    rgba(111, 79, 45, 0.45);
+
+  border-radius: 35px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  color: #6f4f2d;
+
+  font-size: 17px;
+  font-style: italic;
+
+  box-shadow:
+    0 4px 16px rgba(70, 50, 25, 0.08);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.opzione-presenza:hover span {
+  transform:
+    translateY(-1px);
+}
+
+.opzione-presenza
+input:checked + span {
+  background-color: #6f4f2d;
+  color: white;
+}
+
+
+/* =========================
+   PULSANTE INVIA
+========================= */
+
+button[type="submit"] {
+  width: 100%;
+
+  padding: 18px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  background-color: #8a653c;
+
+  color: white;
+
+  font-size: 22px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-style: italic;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 18px rgba(70, 50, 25, 0.18);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #6f4f2d;
+
+  transform:
+    translateY(-2px);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+#messaggio-form {
+  margin-top: 20px;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   LISTA NOZZE
+========================= */
+
+.testo-regalo {
+  max-width: 650px;
+
+  margin:
+    0
+    0
+    38px;
+
+  font-size: 23px;
+  line-height: 1.7;
+
+  letter-spacing: 2px;
+}
+
+.iban {
+  margin-top: 20px;
+}
+
+.iban-label {
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  font-size: 24px;
+  font-style: italic;
+}
+
+.iban-numero {
+  font-size: 25px;
+
+  letter-spacing: 2px;
+
+  overflow-wrap: anywhere;
+}
+
+.iban-intestatario {
+  font-size: 27px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+.torna-su {
+  display: inline-block;
+
+  margin-top: 38px;
+
+  color: #5f4226;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+  padding:
+    10px
+    16px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================
+   SMARTPHONE
+========================= */
+
+@media (max-width: 600px) {
+
+  .pagina {
+    padding:
+      80px
+      20px
+      90px;
+
+    background-size: cover;
+  }
+
+  #home {
+    background-position: center bottom;
+  }
+
+  #invito {
+    background-position: center center;
+  }
+
+  #cerimonia {
+    background-position: center bottom;
+  }
+
+  #ricevimento {
+    background-position: center bottom;
+  }
+
+  #conferma {
+    background-position: center bottom;
+  }
+
+  #lista-nozze {
+    background-position: center center;
+  }
+
+  #home .contenuto {
+    transform: translateY(-23vh);
+  }
+
+  #invito .contenuto {
+    transform: translateY(0);
+  }
+
+  #cerimonia .contenuto {
+    transform: translateY(-14vh);
+  }
+
+  #ricevimento .contenuto {
+    transform: translateY(-13vh);
+
+    padding:
+      22px
+      18px;
+  }
+
+  #conferma .contenuto {
+    transform: translateY(-7vh);
+  }
+
+  #lista-nozze .contenuto {
+    max-width: 92%;
+
+    margin-left: 0;
+    margin-right: auto;
+
+    transform: translateY(-13vh);
+
+    text-align: left;
+  }
+
+  .nomi {
+    font-size: 58px;
+  }
+
+  .nomi span {
+    font-size: 36px;
+  }
+
+  .testo-invito {
+    font-size: 19px;
+  }
+
+  .numero-data {
+    font-size: 85px;
+  }
+
+  .mese-data {
+    font-size: 46px;
+  }
+
+  .anno-data {
+    font-size: 19px;
+
+    letter-spacing: 13px;
+  }
+
+  .countdown-frase {
+    font-size: 18px;
+  }
+
+  .testo-sezione {
+    font-size: 18px;
+  }
+
+  .titolo-elegante {
+    font-size: 42px;
+  }
+
+  .indirizzo {
+    font-size: 16px;
+  }
+
+  .indicazioni-button {
+    font-size: 16px;
+
+    padding:
+      13px
+      24px;
+  }
+
+  .menu-button {
+    top: 18px;
+    right: 18px;
+
+    width: 52px;
+    height: 52px;
+  }
+
+  .menu-nav {
+    gap: 28px;
+  }
+
+  .menu-nav a {
+    font-size: 26px;
+  }
+
+  .freccia {
+    width: 50px;
+    height: 50px;
+  }
+
+  .titolo-form {
+    font-size: 25px;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 16px;
+  }
+
+  .scelta-presenza {
+    flex-direction: column;
+  }
+
+  .opzione-presenza span {
+    min-height: 55px;
+
+    font-size: 16px;
+  }
+
+  .testo-regalo {
+    font-size: 18px;
+  }
+
+  .iban-numero {
+    font-size: 17px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .iban-intestatario {
+    font-size: 20px;
+  }
+
+  .anta-home {
+    background-size: 200% 100%;
+  }
+}
+
+
+/* =========================
+   SCHERMI MOLTO PICCOLI
+========================= */
+
+@media (max-width: 380px) {
+
+  .pagina {
+    padding:
+      70px
+      16px
+      85px;
+  }
+
+  .nomi {
+    font-size: 50px;
+  }
+
+  .numero-data {
+    font-size: 72px;
+  }
+
+  .mese-data {
+    font-size: 39px;
+  }
+
+  .titolo-elegante {
+    font-size: 36px;
+  }
+
+  #home .contenuto {
+    transform: translateY(-20vh);
+  }
+
+  #lista-nozze .contenuto {
+    transform: translateY(-10vh);
+  }
+}
+
+
+/* =========================
+   ACCESSIBILITÀ
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

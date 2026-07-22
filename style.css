@@ -975,21 +975,27 @@ button[type="submit"]:disabled {
   ========================= */
 
   .pagina {
-    width: 100%;
+  width: 100%;
 
-    min-height: 130svh;
+  height: 100svh;
+  min-height: 100svh;
 
-    position: relative;
+  position: relative;
 
-    padding:
-      calc(95px + env(safe-area-inset-top))
-      20px
-      calc(125px + env(safe-area-inset-bottom));
+  padding:
+    calc(85px + env(safe-area-inset-top))
+    20px
+    calc(90px + env(safe-area-inset-bottom));
 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  overflow: hidden;
+}
 
 
   /* =========================
@@ -1356,14 +1362,14 @@ button[type="submit"]:disabled {
   ========================= */
 
   .freccia {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 
-    bottom:
-      calc(75px + env(safe-area-inset-bottom));
+  bottom:
+    calc(28px + env(safe-area-inset-bottom));
 
-    z-index: 20;
-  }
+  z-index: 20;
+}
 }
 
 

@@ -164,21 +164,6 @@ body.transizione-in-corso {
 
 #ricevimento .contenuto {
   transform: translateY(-18vh);
-
-  padding:
-    26px
-    30px;
-
-  border-radius: 28px;
-
-  background:
-    rgba(255, 255, 255, 0.42);
-
-  box-shadow:
-    0 8px 30px rgba(75, 55, 30, 0.08);
-
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 #conferma .contenuto {
@@ -1149,6 +1134,50 @@ button[type="submit"]:disabled {
   .iban-intestatario {
     font-size: 20px;
   }
+
+  /* IMMAGINI OTTIMIZZATE PER SMARTPHONE */
+
+#home {
+  background-image:
+    url("immagini/home.webp");
+
+  background-position: center center;
+}
+
+#invito {
+  background-image:
+    url("immagini/invito.webp");
+
+  background-position: center center;
+}
+
+#cerimonia {
+  background-image:
+    url("immagini/cerimonia.webp");
+
+  background-position: center center;
+}
+
+#ricevimento {
+  background-image:
+    url("immagini/ricevimento.webp");
+
+  background-position: center center;
+}
+
+#conferma {
+  background-image:
+    url("immagini/conferma.webp");
+
+  background-position: center center;
+}
+
+#lista-nozze {
+  background-image:
+    url("immagini/regalo.webp");
+
+  background-position: center center;
+}
 }
 
 

@@ -1018,12 +1018,12 @@ button[type="submit"]:disabled {
   }
 
   #cerimonia .contenuto {
-  transform: translateY(-4vh);
+  transform: translateY(-9vh);
 }
 
 
 #ricevimento .contenuto {
-  transform: translateY(-5vh);
+  transform: translateY(-10vh);
 
   padding: 0;
 

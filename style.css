@@ -970,137 +970,273 @@ button[type="submit"]:disabled {
 
 @media (max-width: 600px) {
 
+  /* =========================
+     STRUTTURA GENERALE
+  ========================= */
+
   .pagina {
-  width: 100%;
+    width: 100%;
 
-  min-height: 110svh;
+    min-height: 115svh;
 
-  padding:
-    calc(100px + env(safe-area-inset-top))
-    20px
-    100px;
+    padding:
+      calc(95px + env(safe-area-inset-top))
+      20px
+      105px;
 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+
+  /* =========================
+     IMMAGINI MOBILE
+  ========================= */
 
   #home {
-    background-position: center bottom;
+    background-image:
+      url("immagini/home.webp");
+
+    background-position: center center;
   }
 
   #invito {
+    background-image:
+      url("immagini/invito.webp");
+
     background-position: center center;
   }
 
   #cerimonia {
-    background-position: center bottom;
-  }
+    background-image:
+      url("immagini/cerimonia.webp");
 
-  #ricevimento {
-    background-position: center bottom;
-  }
-
-  #conferma {
-    background-position: center bottom;
-  }
-
-  #lista-nozze {
     background-position: center center;
   }
 
+  #ricevimento {
+    background-image:
+      url("immagini/ricevimento.webp");
+
+    background-position: center center;
+  }
+
+  #conferma {
+    background-image:
+      url("immagini/conferma.webp");
+
+    background-position: center center;
+  }
+
+  #lista-nozze {
+    background-image:
+      url("immagini/regalo.webp");
+
+    background-position: center center;
+  }
+
+
+  /* =========================
+     POSIZIONE CONTENUTI
+  ========================= */
+
   #home .contenuto {
-    transform: translateY(-20vh);
+    transform: translateY(-10vh);
   }
 
   #invito .contenuto {
-    transform: translateY(2vh);
+    transform: translateY(1vh);
   }
 
   #cerimonia .contenuto {
-  transform: translateY(-9vh);
-}
+    transform: translateY(-9vh);
+  }
+
+  #ricevimento .contenuto {
+    transform: translateY(-10vh);
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 
 
-#ricevimento .contenuto {
-  transform: translateY(-10vh);
+  /* =========================
+     CONFERMA
+  ========================= */
 
-  padding: 0;
+  #conferma {
+    min-height: 145svh;
+    height: auto;
 
-  background: transparent;
+    padding-top:
+      calc(70px + env(safe-area-inset-top));
 
-  border-radius: 0;
+    padding-bottom: 140px;
 
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
+    background-position: center center;
+  }
+
+  #conferma .contenuto {
+    transform: translateY(-5vh);
+  }
+
+  #conferma form {
+    gap: 15px;
+  }
+
+  #conferma .titolo-form {
+    margin-bottom: 22px;
+
+    font-size: 25px;
+  }
+
+  #conferma input[type="text"],
+  #conferma textarea {
+    font-size: 16px;
+
+    padding:
+      17px
+      22px;
+  }
+
+  #conferma textarea {
+    min-height: 115px;
+  }
+
+  #conferma .scelta-presenza {
+    flex-direction: column;
+  }
+
+  #conferma .opzione-presenza span {
+    min-height: 58px;
+
+    font-size: 16px;
+  }
+
+  #conferma .gruppo-invitati {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  #conferma .campo-persone select {
+    font-size: 16px;
+  }
 
 
-#conferma .contenuto {
-  transform: translateY(-2vh);
-}
+  /* =========================
+     LISTA NOZZE / REGALO
+  ========================= */
 
-#conferma {
-  min-height: 145svh;
-  height: auto;
-  padding-bottom: 140px;
+  #lista-nozze {
+    min-height: 120svh;
 
-  background-position: center bottom;
-}
+    background-position: center center;
+  }
+
+  #lista-nozze .contenuto {
+    width: 78%;
+    max-width: 78%;
+
+    margin-left: 6%;
+    margin-right: auto;
+
+    padding: 0;
+
+    transform: translateY(-8vh);
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    text-align: left;
+  }
+
+  #lista-nozze .testo-regalo {
+    margin:
+      0
+      0
+      30px;
+
+    font-size: 17px;
+    line-height: 1.65;
+
+    text-align: left;
+
+    text-shadow:
+      0 1px 2px rgba(255, 255, 255, 0.95),
+      0 0 8px rgba(255, 255, 255, 0.70);
+  }
+
+  #lista-nozze .iban {
+    text-align: left;
+
+    text-shadow:
+      0 1px 2px rgba(255, 255, 255, 0.95),
+      0 0 8px rgba(255, 255, 255, 0.70);
+  }
+
+  #lista-nozze .iban-label {
+    margin-top: 24px;
+  }
+
+  #lista-nozze .iban-numero {
+    max-width: 270px;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    letter-spacing: 0.3px;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  #lista-nozze .iban-intestatario {
+    max-width: 280px;
+
+    font-size: 19px;
+    line-height: 1.35;
+
+    letter-spacing: 1px;
+  }
+
+  #lista-nozze .torna-su {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    padding:
+      11px
+      17px;
+
+    background:
+      rgba(255, 255, 255, 0.82);
+
+    border-radius: 28px;
+
+    text-shadow: none;
+  }
 
 
-#lista-nozze .contenuto {
-  transform: translateY(-8vh);
-
-  max-width: 88%;
-
-  margin-left: 5%;
-  margin-right: auto;
-
-  padding: 0;
-
-  background: transparent;
-
-  border-radius: 0;
-
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-
-  text-align: left;
-}
-
-#lista-nozze .testo-regalo,
-#lista-nozze .iban,
-#lista-nozze .torna-su {
-  text-shadow:
-    0 1px 2px rgba(255, 255, 255, 0.95),
-    0 0 8px rgba(255, 255, 255, 0.70);
-}
-
-#lista-nozze .iban-numero {
-  font-size: 16px;
-  line-height: 1.5;
-
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-#lista-nozze .torna-su {
-  display: inline-block;
-
-  margin-top: 30px;
-
-  padding:
-    12px
-    18px;
-
-  background:
-    rgba(255, 255, 255, 0.82);
-
-  border-radius: 28px;
-
-  text-shadow: none;
-}
+  /* =========================
+     HOME
+  ========================= */
 
   .nomi {
     font-size: 58px;
@@ -1109,6 +1245,11 @@ button[type="submit"]:disabled {
   .nomi span {
     font-size: 36px;
   }
+
+
+  /* =========================
+     INVITO
+  ========================= */
 
   .testo-invito {
     font-size: 19px;
@@ -1124,6 +1265,7 @@ button[type="submit"]:disabled {
 
   .anno-data {
     font-size: 19px;
+
     letter-spacing: 13px;
   }
 
@@ -1131,21 +1273,36 @@ button[type="submit"]:disabled {
     font-size: 18px;
   }
 
+
+  /* =========================
+     CERIMONIA + RICEVIMENTO
+  ========================= */
+
   .testo-sezione {
-  font-size: 17px;
-  line-height: 1.45;
-}
+    font-size: 17px;
+    line-height: 1.45;
+  }
 
-.titolo-elegante {
-  font-size: 36px;
-  line-height: 1.08;
-}
+  .titolo-elegante {
+    font-size: 36px;
+    line-height: 1.08;
+  }
 
-.indirizzo {
-  font-size: 16px;
-  line-height: 1.45;
-  margin-top: 24px;
-}
+  .indirizzo {
+    margin-top: 24px;
+
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  #ricevimento .titolo-elegante {
+    font-size: 39px;
+  }
+
+  #ricevimento .indirizzo {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 
   .indicazioni-button {
     font-size: 16px;
@@ -1155,8 +1312,15 @@ button[type="submit"]:disabled {
       24px;
   }
 
+
+  /* =========================
+     MENU
+  ========================= */
+
   .menu-button {
-    top: calc(18px + env(safe-area-inset-top));
+    top:
+      calc(18px + env(safe-area-inset-top));
+
     right: 18px;
 
     width: 52px;
@@ -1171,94 +1335,15 @@ button[type="submit"]:disabled {
     font-size: 26px;
   }
 
+
+  /* =========================
+     FRECCE
+  ========================= */
+
   .freccia {
     width: 50px;
     height: 50px;
   }
-
-  .titolo-form {
-    font-size: 25px;
-  }
-
-  input[type="text"],
-  textarea {
-    font-size: 16px;
-  }
-
-  .scelta-presenza {
-    flex-direction: column;
-  }
-
-  .gruppo-invitati {
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-.campo-persone select {
-  font-size: 16px;
-}
-
-  .opzione-presenza span {
-    min-height: 55px;
-    font-size: 16px;
-  }
-
-  .testo-regalo {
-    font-size: 18px;
-  }
-
-  .iban-numero {
-    font-size: 17px;
-    letter-spacing: 0.5px;
-  }
-
-  .iban-intestatario {
-    font-size: 20px;
-  }
-
-  /* IMMAGINI OTTIMIZZATE PER SMARTPHONE */
-
-#home {
-  background-image:
-    url("immagini/home.webp");
-
-  background-position: center center;
-}
-
-#invito {
-  background-image:
-    url("immagini/invito.webp");
-
-  background-position: center center;
-}
-
-#cerimonia {
-  background-image:
-    url("immagini/cerimonia.webp");
-
-  background-position: center center;
-}
-
-#ricevimento {
-  background-image:
-    url("immagini/ricevimento.webp");
-
-  background-position: center center;
-}
-
-#conferma {
-  background-image:
-    url("immagini/conferma.webp");
-
-  background-position: center center;
-}
-
-#lista-nozze {
-  background-image:
-    url("immagini/regalo.webp");
-
-  background-position: center center;
-}
 }
 
 

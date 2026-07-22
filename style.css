@@ -1037,30 +1037,69 @@ button[type="submit"]:disabled {
 
 
 #conferma .contenuto {
-  transform: translateY(1vh);
+  transform: translateY(-2vh);
 }
 
 #conferma {
-  min-height: 120svh;
+  min-height: 145svh;
+  height: auto;
+  padding-bottom: 140px;
+
+  background-position: center bottom;
 }
 
 
 #lista-nozze .contenuto {
-  transform: translateY(-6vh);
+  transform: translateY(-8vh);
 
   max-width: 88%;
 
+  margin-left: 5%;
+  margin-right: auto;
+
+  padding: 0;
+
+  background: transparent;
+
+  border-radius: 0;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  text-align: left;
+}
+
+#lista-nozze .testo-regalo,
+#lista-nozze .iban,
+#lista-nozze .torna-su {
+  text-shadow:
+    0 1px 2px rgba(255, 255, 255, 0.95),
+    0 0 8px rgba(255, 255, 255, 0.70);
+}
+
+#lista-nozze .iban-numero {
+  font-size: 16px;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+#lista-nozze .torna-su {
+  display: inline-block;
+
+  margin-top: 30px;
+
   padding:
-    20px
+    12px
     18px;
 
   background:
-    rgba(255, 250, 240, 0.30);
+    rgba(255, 255, 255, 0.82);
 
-  border-radius: 24px;
+  border-radius: 28px;
 
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  text-shadow: none;
 }
 
   .nomi {

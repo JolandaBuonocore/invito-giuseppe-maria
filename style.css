@@ -977,12 +977,14 @@ button[type="submit"]:disabled {
   .pagina {
     width: 100%;
 
-    min-height: 115svh;
+    min-height: 130svh;
+
+    position: relative;
 
     padding:
       calc(95px + env(safe-area-inset-top))
       20px
-      105px;
+      calc(125px + env(safe-area-inset-bottom));
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -1059,6 +1061,7 @@ button[type="submit"]:disabled {
     padding: 0;
 
     background: transparent;
+
     border: none;
     border-radius: 0;
 
@@ -1078,15 +1081,16 @@ button[type="submit"]:disabled {
     height: auto;
 
     padding-top:
-      calc(70px + env(safe-area-inset-top));
+      calc(60px + env(safe-area-inset-top));
 
-    padding-bottom: 140px;
+    padding-bottom:
+      calc(150px + env(safe-area-inset-bottom));
 
     background-position: center center;
   }
 
   #conferma .contenuto {
-    transform: translateY(-5vh);
+    transform: translateY(-12vh);
   }
 
   #conferma form {
@@ -1094,7 +1098,7 @@ button[type="submit"]:disabled {
   }
 
   #conferma .titolo-form {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
     font-size: 25px;
   }
@@ -1109,11 +1113,13 @@ button[type="submit"]:disabled {
   }
 
   #conferma textarea {
-    min-height: 115px;
+    min-height: 110px;
   }
 
   #conferma .scelta-presenza {
     flex-direction: column;
+
+    gap: 14px;
   }
 
   #conferma .opzione-presenza span {
@@ -1128,6 +1134,10 @@ button[type="submit"]:disabled {
     gap: 14px;
   }
 
+  #conferma .campo-persone {
+    gap: 7px;
+  }
+
   #conferma .campo-persone select {
     font-size: 16px;
   }
@@ -1138,31 +1148,39 @@ button[type="submit"]:disabled {
   ========================= */
 
   #lista-nozze {
-    min-height: 120svh;
+    min-height: 130svh;
 
     background-position: center center;
   }
 
   #lista-nozze .contenuto {
-    width: 78%;
-    max-width: 78%;
+    width: 88%;
+    max-width: 88%;
 
-    margin-left: 6%;
+    margin-left: 4%;
     margin-right: auto;
 
-    padding: 0;
+    padding:
+      24px
+      20px;
 
     transform: translateY(-8vh);
 
-    background: transparent;
+    background:
+      rgba(255, 250, 240, 0.56);
 
-    border: none;
-    border-radius: 0;
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.38);
 
-    box-shadow: none;
+    border-radius: 24px;
 
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    box-shadow:
+      0 8px 30px
+      rgba(70, 50, 30, 0.08);
+
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
 
     text-align: left;
   }
@@ -1171,55 +1189,52 @@ button[type="submit"]:disabled {
     margin:
       0
       0
-      30px;
+      28px;
 
     font-size: 17px;
-    line-height: 1.65;
+    line-height: 1.6;
 
     text-align: left;
 
-    text-shadow:
-      0 1px 2px rgba(255, 255, 255, 0.95),
-      0 0 8px rgba(255, 255, 255, 0.70);
+    text-shadow: none;
   }
 
   #lista-nozze .iban {
     text-align: left;
 
-    text-shadow:
-      0 1px 2px rgba(255, 255, 255, 0.95),
-      0 0 8px rgba(255, 255, 255, 0.70);
+    text-shadow: none;
   }
 
   #lista-nozze .iban-label {
-    margin-top: 24px;
+    margin-top: 22px;
+    margin-bottom: 8px;
   }
 
   #lista-nozze .iban-numero {
-    max-width: 270px;
+    max-width: 100%;
 
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.45;
 
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
 
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
   #lista-nozze .iban-intestatario {
-    max-width: 280px;
+    max-width: 100%;
 
     font-size: 19px;
-    line-height: 1.35;
+    line-height: 1.3;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
   }
 
   #lista-nozze .torna-su {
     display: inline-block;
 
-    margin-top: 28px;
+    margin-top: 26px;
 
     padding:
       11px
@@ -1343,6 +1358,11 @@ button[type="submit"]:disabled {
   .freccia {
     width: 50px;
     height: 50px;
+
+    bottom:
+      calc(75px + env(safe-area-inset-bottom));
+
+    z-index: 20;
   }
 }
 

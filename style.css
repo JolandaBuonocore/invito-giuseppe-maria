@@ -765,6 +765,84 @@ input:checked + span {
   color: white;
 }
 
+/* =========================
+   ADULTI E BAMBINI
+========================= */
+
+.gruppo-invitati {
+  width: 100%;
+
+  display: none;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 15px;
+}
+
+.gruppo-invitati.visibile {
+  display: grid;
+}
+
+.campo-persone {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  text-align: left;
+}
+
+.campo-persone label {
+  margin-left: 18px;
+
+  color: #6f4f2d;
+
+  font-size: 16px;
+  font-style: italic;
+}
+
+.campo-persone select {
+  width: 100%;
+
+  padding:
+    18px
+    20px;
+
+  border:
+    1px solid
+    rgba(111, 79, 45, 0.25);
+
+  border-radius: 35px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  color: #5f4226;
+
+  font-size: 17px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-style: italic;
+
+  outline: none;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 16px
+    rgba(70, 50, 25, 0.08);
+
+  appearance: none;
+  -webkit-appearance: none;
+}
 
 /* =========================
    PULSANTE INVIA
@@ -1044,6 +1122,15 @@ button[type="submit"]:disabled {
   .scelta-presenza {
     flex-direction: column;
   }
+
+  .gruppo-invitati {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.campo-persone select {
+  font-size: 16px;
+}
 
   .opzione-presenza span {
     min-height: 55px;

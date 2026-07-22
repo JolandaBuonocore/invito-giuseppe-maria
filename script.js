@@ -127,11 +127,76 @@ document.addEventListener(
 const form =
   document.getElementById("form-conferma");
 
+const gruppoInvitati =
+  document.getElementById(
+    "gruppo-invitati"
+  );
+
+const numeroAdultiCampo =
+  document.getElementById(
+    "numero-adulti"
+  );
+
+const numeroBambiniCampo =
+  document.getElementById(
+    "numero-bambini"
+  );
+
+const radioPresenza =
+  document.querySelectorAll(
+    'input[name="presenza"]'
+  );
+
 const messaggio =
   document.getElementById("messaggio-form");
 
 const urlGoogleScript =
   "https://script.google.com/macros/s/AKfycbzzd8NGV2kz6YQ6bi5GPPTdTAkwzaQpbs4dCwcnJzzsxaqZ10r8G3H5gjgwLtwT30RbAQ/exec";
+
+radioPresenza.forEach(
+  function (radio) {
+
+    radio.addEventListener(
+      "change",
+      function () {
+
+        if (
+          radio.checked &&
+          radio.value === "Parteciperò"
+        ) {
+
+          gruppoInvitati
+            .classList
+            .add("visibile");
+
+          numeroAdultiCampo.required = true;
+
+        }
+
+
+        if (
+          radio.checked &&
+          radio.value ===
+            "Non potrò partecipare"
+        ) {
+
+          gruppoInvitati
+            .classList
+            .remove("visibile");
+
+          numeroAdultiCampo.required = false;
+
+          numeroAdultiCampo.value = "";
+
+          numeroBambiniCampo.value = "0";
+
+        }
+
+      }
+    );
+
+  }
+);
 
 if (form && messaggio) {
   form.addEventListener(
@@ -171,11 +236,40 @@ if (form && messaggio) {
         return;
       }
 
+      let numeroAdulti = "0";
+let numeroBambini = "0";
+
+
+if (
+  presenzaSelezionata.value ===
+  "Parteciperò"
+) {
+
+  numeroAdulti =
+    numeroAdultiCampo.value;
+
+  numeroBambini =
+    numeroBambiniCampo.value;
+
+
+  if (!numeroAdulti) {
+
+    messaggio.textContent =
+      "Seleziona il numero di adulti.";
+
+    return;
+
+  }
+
+}
+
       const dati = {
-        nome: nome,
-        presenza: presenzaSelezionata.value,
-        note: note
-      };
+  nome: nome,
+  presenza: presenzaSelezionata.value,
+  numeroAdulti: numeroAdulti,
+  numeroBambini: numeroBambini,
+  note: note
+};
 
       const pulsanteInvia =
         form.querySelector(
@@ -219,6 +313,16 @@ if (form && messaggio) {
           "Errore durante l'invio:",
           errore
         );
+
+        gruppoInvitati
+  .classList
+  .remove("visibile");
+
+numeroAdultiCampo.required = false;
+
+numeroAdultiCampo.value = "";
+
+numeroBambiniCampo.value = "0";
 
         messaggio.textContent =
           "Si è verificato un errore. Riprova.";
